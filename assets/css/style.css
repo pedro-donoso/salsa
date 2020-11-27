@@ -1,0 +1,109 @@
+:root {
+  --color-nav: rgb(131, 129, 129);
+  --color-nav-dark: rgb(28, 52, 75);
+  --color-section: rgb(131, 129, 129);
+  --color-aside: rgb(153, 132, 10);
+  --color-footer: rgb(25, 0, 255);
+  --color-red: rgb(225, 29, 29);
+  --color-grey: rgb(192, 191, 191);
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #bfbaba;
+  color: #000000;
+  font-family: 'Trebuchet MS';
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+
+  grid-template-areas: "header banner banner"
+                        "uno uno uno"
+                        "dos tres cuatro"
+                        "cinco cinco cinco";
+}
+
+.contenedor > div,
+.contenedor .logo,
+.contenedor .banner,
+.contenedor .uno,
+.contenedor .dos,
+.contenedor .tres,
+.contenedor .cuatro,
+.contenedor .cinco {
+  background: #ffffff;
+  padding: 20px;
+}
+
+.contenedor .logo {
+background: #dd1010;
+color: #ffffff;
+grid-area: header;
+text-align: center;
+}
+
+.contenedor .banner {
+background: #baabab;
+color: #ffffff;
+grid-area: banner;
+text-align: center;
+}
+
+.contenedor .uno {
+background: #524e4e;
+color: #ffffff;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 100px;
+grid-area: uno;
+}
+
+.contenedor .dos,
+.contenedor .tres,
+.contenedor .cuatro {
+background: #dd1010;
+color: #ffffff;
+height: 100%;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.contenedor .dos{
+  grid-area: dos;
+}
+
+.contenedor .tres{
+  grid-area: tres;
+}
+
+.contenedor .cuatro{
+  grid-area: cuatro;
+}
+
+.contenedor .cinco {
+background: #524e4e;
+color: #ffffff;
+height: 100%;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+grid-area: cinco;
+}
+
