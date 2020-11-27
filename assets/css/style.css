@@ -10,29 +10,23 @@
   --color-white: #ffffff;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   background: #bfbaba;
   color: #000000;
-  font-family: 'Trebuchet MS';
+  font-family: "Trebuchet MS";
 }
 
 .contenedor {
-  width: 90%;
-  max-width: 1000px;
-  margin: 20px auto;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(4, auto);
 
-  grid-template-areas: "header banner banner"
-                        "uno uno uno"
-                        "dos tres cuatro"
-                        "cinco cinco cinco";
+  grid-template-areas:
+    "logo banner banner"
+    "uno uno uno"
+    "dos tres cuatro"
+    "cinco cinco cinco";
 }
 
 .contenedor > div,
@@ -43,67 +37,73 @@ body {
 .contenedor .tres,
 .contenedor .cuatro,
 .contenedor .cinco {
-  background: #ffffff;
-  padding: 20px;
+  color: #ffffff;
+  margin: 5px;
+  padding: 5px;
 }
 
 .contenedor .logo {
-background: #dd1010;
-color: #ffffff;
-grid-area: header;
-text-align: center;
+  background: #dd1010;
+  grid-area: logo;
+  text-align: center;
+  display: flex;
 }
 
 .contenedor .banner {
-background: #baabab;
-color: #ffffff;
-grid-area: banner;
-text-align: center;
+  background: #a09a9a;
+  grid-area: banner;
+  text-align: center;
 }
 
 .contenedor .uno {
-background: #524e4e;
-color: #ffffff;
-text-align: center;
-display: flex;
-align-items: center;
-justify-content: center;
-min-height: 100px;
-grid-area: uno;
+  background: #524e4e;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: uno;
 }
 
 .contenedor .dos,
 .contenedor .tres,
 .contenedor .cuatro {
-background: #dd1010;
-color: #ffffff;
-height: 100%;
-text-align: center;
-display: flex;
-align-items: center;
-justify-content: center;
+  background: #dd1010;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  padding: 5px;
 }
 
-.contenedor .dos{
+.contenedor .dos {
   grid-area: dos;
 }
 
-.contenedor .tres{
+.contenedor .tres {
   grid-area: tres;
 }
 
-.contenedor .cuatro{
+.contenedor .cuatro {
   grid-area: cuatro;
 }
 
 .contenedor .cinco {
-background: #524e4e;
-color: #ffffff;
-height: 100%;
-text-align: center;
-display: flex;
-align-items: center;
-justify-content: center;
-grid-area: cinco;
+  background: #524e4e;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: cinco;
 }
+
+@media screen and (max-width: 400px){
+ .contenedor .logo{
+   grid-column: 1 / -1;
+ }
+}
+
+
+
 
