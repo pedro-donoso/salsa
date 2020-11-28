@@ -1,9 +1,6 @@
 :root {
-  --color-nav: rgb(131, 129, 129);
-  --color-nav-dark: rgb(28, 52, 75);
-  --color-section: rgb(131, 129, 129);
-  --color-aside: rgb(153, 132, 10);
-  --color-footer: rgb(25, 0, 255);
+  --color-nav: rgb(157, 156, 156);
+  --color-section: rgb(107, 107, 107);
   --color-red: rgb(225, 29, 29);
   --color-grey: rgb(192, 191, 191);
   --color-black: #000000;
@@ -11,19 +8,20 @@
 }
 
 body {
-  background: #bfbaba;
+  background: var(--color-white);
   color: #000000;
   font-family: "Trebuchet MS";
 }
 
 .contenedor {
-  width: 100%;
+  text-align: justify;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(4, auto);
 
   grid-template-areas:
-    "logo banner banner"
+    "logo logo logo"
+    "banner banner banner"
     "uno uno uno"
     "dos tres cuatro"
     "cinco cinco cinco";
@@ -37,32 +35,52 @@ body {
 .contenedor .tres,
 .contenedor .cuatro,
 .contenedor .cinco {
-  color: #ffffff;
-  margin: 5px;
-  padding: 5px;
+  color: var(--color-white);
+
+
 }
 
 .contenedor .logo {
-  background: #dd1010;
+  background: var(--color-red);
   grid-area: logo;
   text-align: center;
+ background-image: url(../images/salsa.jpg);
+
+  margin: 5px;
+  padding: 5px;
+
+}
+
+.contenedor .logo .img {
+ width: 100%;
+ background-repeat: no-repeat;
+
+
 }
 
 .contenedor .banner {
-  background: #a09a9a;
+  background: var(--color-nav);
   grid-area: banner;
   text-align: center;
+    margin: 5px;
+  padding: 5px;
+
 
 }
 
+
+
+
 .contenedor .uno {
-  background: #524e4e;
-   height: 10rem;
+  background: var(--color-section);
   text-align: center;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   grid-area: uno;
+   margin: 5px;
+  padding: 5px;
+
 }
 
 
@@ -70,8 +88,8 @@ body {
 .contenedor .dos,
 .contenedor .tres,
 .contenedor .cuatro {
-  background: #dd1010;
-  height: 10rem;
+  background: var(--color-red);
+  height: 90%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -93,16 +111,27 @@ body {
 }
 
 .contenedor .cinco {
-  background: #524e4e;
-    height: 10rem;
+  background: var(--color-section);
+    height: 90%;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   grid-area: cinco;
+  margin: 5px;
+  padding: 5px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
+  .contenedor{
+    grid-template-areas:  "logo banner banner"
+                          "uno uno uno"
+                          "dos tres cuatro"
+                          "cinco cinco cinco"; 
+  }
+}
+
+@media screen and (max-width: 400px){
   .contenedor{
     grid-template-areas:  "logo logo logo"
                           "banner banner banner"
