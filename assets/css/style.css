@@ -20,7 +20,7 @@ body {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(5, auto);
 
   grid-template-areas:
     "logo banner banner"
@@ -46,13 +46,16 @@ body {
   background: #dd1010;
   grid-area: logo;
   text-align: center;
-  display: flex;
+  min-height: 100px;
+
 }
 
 .contenedor .banner {
   background: #a09a9a;
   grid-area: banner;
   text-align: center;
+  min-height: 100px;
+
 }
 
 .contenedor .uno {
@@ -62,6 +65,16 @@ body {
   align-items: center;
   justify-content: center;
   grid-area: uno;
+}
+
+.contenedor .cinco {
+  background: #524e4e;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: cinco;
+  margin-top: 2rem;
 }
 
 .contenedor .dos,
@@ -89,19 +102,42 @@ body {
   grid-area: cuatro;
 }
 
-.contenedor .cinco {
-  background: #524e4e;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-area: cinco;
-}
-
-@media screen and (max-width: 400px){
- .contenedor .logo{
-   grid-column: 1 / -1;
+@media screen and (max-width: 768px){
+ .contenedor .logo {
+   grid-row: span 1 ;
+   grid-column: span 3 ;
  }
+
+ .contenedor .banner {
+  grid-row: span 1  ;
+  grid-column: span 3 ;
+ }
+
+ .contenedor .uno {
+   grid-row: span 1 ;
+   grid-column: span 3 ;
+ }
+
+ .contenedor .dos {
+   grid-row: span 1 ;
+   grid-column: span  ;
+ }
+
+ .contenedor .tres {
+   grid-row: span 1 ;
+   grid-column: span  ;
+ }
+
+ .contenedor .cuatro {
+   grid-row: span 1 ;
+   grid-column: span  ;
+ }
+
+ .contenedor .cinco {
+   grid-row: span 1 ;
+   grid-column: span   ;
+ }
+
 }
 
 
